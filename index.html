@@ -24,279 +24,78 @@
 
 <body>
 
-<audio controls="true">
+  <audio controls="true">
     <source src="y2mate.com - sempurna  andra and the backbone  slowed  tiktok version .mp3" type="audio/mpeg">
-</audio>
+  </audio>
 
 
-<script language="JavaScript">
-  var txt = " For Nana ❤️ ";
+  <script language="JavaScript">
+    var txt = " For Nana ❤️ ";
 
 
-  var kecepatan = 75;
-  var segarkan = null;
+    var kecepatan = 75;
+    var segarkan = null;
 
-  function bergerak() {
-    document.title = txt;
-
-
-    txt = txt.substring(1, txt.length) + txt.charAt(0);
+    function bergerak() {
+      document.title = txt;
 
 
-    segarkan = setTimeout("bergerak()", kecepatan);
-  }
-  bergerak();
-</script>
+      txt = txt.substring(1, txt.length) + txt.charAt(0);
 
 
-
-
-
-<style type="text/css">
-  body {
-    background: #000000 url(http://www.animatedgif.net/love/kjvhearti_e0.gif) repeat scroll center 0;
-</style>
-
-
-
-
-<link href="">
-
-<script type="text/javascript">
-  TypingText = function (element, interval, cursor, finishedCallback) {
-
-
-    if ((typeof document.getElementById == "undefined") || (typeof element.innerHTML == "undefined")) {
-
-
-      this.running = true; // Never run.
-
-
-      return;
-
-
+      segarkan = setTimeout("bergerak()", kecepatan);
     }
+    bergerak();
+  </script>
 
 
-    this.element = element;
 
 
-    this.finishedCallback = (finishedCallback ? finishedCallback : function () {
-      return;
-    });
 
+  <style type="text/css">
+    body {
+      background: #000000 url(http://www.animatedgif.net/love/kjvhearti_e0.gif) repeat scroll center 0;
+  </style>
 
-    this.interval = (typeof interval == "undefined" ? 20 : interval);
 
 
-    this.origText = this.element.innerHTML;
 
+  <link href="">
 
-    this.unparsedOrigText = this.origText;
+  <script type="text/javascript">
+    TypingText = function (element, interval, cursor, finishedCallback) {
 
 
-    this.cursor = (cursor ? cursor : "");
+      if ((typeof document.getElementById == "undefined") || (typeof element.innerHTML == "undefined")) {
 
 
-    this.currentText = "";
-
-
-    this.currentChar = 0;
-
-
-    this.element.typingText = this;
-
-
-    if (this.element.id == "") this.element.id = "typingtext" + TypingText.currentIndex++;
-
-
-    TypingText.all.push(this);
-
-
-    this.running = false;
-
-
-    this.inTag = false;
-
-
-    this.tagBuffer = "";
-
-
-    this.inHTMLEntity = false;
-
-
-    this.HTMLEntityBuffer = "";
-
-
-  }
-
-
-  TypingText.all = new Array();
-
-
-  TypingText.currentIndex = 0;
-
-
-  TypingText.runAll = function () {
-
-
-    for (var i = 0; i < TypingText.all.length; i++) TypingText.all[i].run();
-
-
-  }
-
-
-  TypingText.prototype.run = function () {
-
-
-    if (this.running) return;
-
-
-    if (typeof this.origText == "undefined") {
-
-
-      setTimeout("document.getElementById('" + this.element.id + "').typingText.run()", this
-      .interval); // We haven't finished loading yet.  Have patience.
-      return;
-    }
-    if (this.currentText == "") this.element.innerHTML = "";
-    //  this.origText = this.origText.replace(/<([^<])*>/, "");     // Strip HTML from text.
-
-
-    if (this.currentChar < this.origText.length) {
-
-
-      if (this.origText.charAt(this.currentChar) == "<" && !this.inTag) {
-
-
-        this.tagBuffer = "<";
-
-
-        this.inTag = true;
-
-
-        this.currentChar++;
-
-
-        this.run();
+        this.running = true; // Never run.
 
 
         return;
-
-
-      } else if (this.origText.charAt(this.currentChar) == ">" && this.inTag) {
-
-
-        this.tagBuffer += ">";
-
-
-        this.inTag = false;
-
-
-        this.currentText += this.tagBuffer;
-
-
-        this.currentChar++;
-
-
-        this.run();
-
-
-        return;
-
-
-      } else if (this.inTag) {
-
-
-        this.tagBuffer += this.origText.charAt(this.currentChar);
-
-
-        this.currentChar++;
-
-
-        this.run();
-
-
-        return;
-
-
-      } else if (this.origText.charAt(this.currentChar) == "&" && !this.inHTMLEntity) {
-
-
-        this.HTMLEntityBuffer = "&";
-
-
-        this.inHTMLEntity = true;
-
-
-        this.currentChar++;
-
-
-        this.run();
-
-
-        return;
-
-
-      } else if (this.origText.charAt(this.currentChar) == ";" && this.inHTMLEntity) {
-
-
-        this.HTMLEntityBuffer += ";";
-
-
-        this.inHTMLEntity = false;
-
-
-        this.currentText += this.HTMLEntityBuffer;
-
-
-        this.currentChar++;
-
-
-        this.run();
-
-
-        return;
-
-
-      } else if (this.inHTMLEntity) {
-
-
-        this.HTMLEntityBuffer += this.origText.charAt(this.currentChar);
-
-
-        this.currentChar++;
-
-
-        this.run();
-
-
-        return;
-
-
-      } else {
-
-
-        this.currentText += this.origText.charAt(this.currentChar);
 
 
       }
 
 
-      this.element.innerHTML = this.currentText;
+      this.element = element;
 
 
-      this.element.innerHTML += (this.currentChar < this.origText.length - 1 ? (typeof this.cursor == "function" ?
-        this.cursor(this.currentText) : this.cursor) : "");
+      this.finishedCallback = (finishedCallback ? finishedCallback : function () {
+        return;
+      });
 
 
-      this.currentChar++;
+      this.interval = (typeof interval == "undefined" ? 20 : interval);
 
 
-      setTimeout("document.getElementById('" + this.element.id + "').typingText.run()", this.interval);
+      this.origText = this.element.innerHTML;
 
 
-    } else {
+      this.unparsedOrigText = this.origText;
+
+
+      this.cursor = (cursor ? cursor : "");
 
 
       this.currentText = "";
@@ -305,17 +104,218 @@
       this.currentChar = 0;
 
 
+      this.element.typingText = this;
+
+
+      if (this.element.id == "") this.element.id = "typingtext" + TypingText.currentIndex++;
+
+
+      TypingText.all.push(this);
+
+
       this.running = false;
 
 
-      this.finishedCallback();
+      this.inTag = false;
+
+
+      this.tagBuffer = "";
+
+
+      this.inHTMLEntity = false;
+
+
+      this.HTMLEntityBuffer = "";
 
 
     }
 
 
-  }
-</script>
+    TypingText.all = new Array();
+
+
+    TypingText.currentIndex = 0;
+
+
+    TypingText.runAll = function () {
+
+
+      for (var i = 0; i < TypingText.all.length; i++) TypingText.all[i].run();
+
+
+    }
+
+
+    TypingText.prototype.run = function () {
+
+
+      if (this.running) return;
+
+
+      if (typeof this.origText == "undefined") {
+
+
+        setTimeout("document.getElementById('" + this.element.id + "').typingText.run()", this
+          .interval); // We haven't finished loading yet.  Have patience.
+        return;
+      }
+      if (this.currentText == "") this.element.innerHTML = "";
+      //  this.origText = this.origText.replace(/<([^<])*>/, "");     // Strip HTML from text.
+
+
+      if (this.currentChar < this.origText.length) {
+
+
+        if (this.origText.charAt(this.currentChar) == "<" && !this.inTag) {
+
+
+          this.tagBuffer = "<";
+
+
+          this.inTag = true;
+
+
+          this.currentChar++;
+
+
+          this.run();
+
+
+          return;
+
+
+        } else if (this.origText.charAt(this.currentChar) == ">" && this.inTag) {
+
+
+          this.tagBuffer += ">";
+
+
+          this.inTag = false;
+
+
+          this.currentText += this.tagBuffer;
+
+
+          this.currentChar++;
+
+
+          this.run();
+
+
+          return;
+
+
+        } else if (this.inTag) {
+
+
+          this.tagBuffer += this.origText.charAt(this.currentChar);
+
+
+          this.currentChar++;
+
+
+          this.run();
+
+
+          return;
+
+
+        } else if (this.origText.charAt(this.currentChar) == "&" && !this.inHTMLEntity) {
+
+
+          this.HTMLEntityBuffer = "&";
+
+
+          this.inHTMLEntity = true;
+
+
+          this.currentChar++;
+
+
+          this.run();
+
+
+          return;
+
+
+        } else if (this.origText.charAt(this.currentChar) == ";" && this.inHTMLEntity) {
+
+
+          this.HTMLEntityBuffer += ";";
+
+
+          this.inHTMLEntity = false;
+
+
+          this.currentText += this.HTMLEntityBuffer;
+
+
+          this.currentChar++;
+
+
+          this.run();
+
+
+          return;
+
+
+        } else if (this.inHTMLEntity) {
+
+
+          this.HTMLEntityBuffer += this.origText.charAt(this.currentChar);
+
+
+          this.currentChar++;
+
+
+          this.run();
+
+
+          return;
+
+
+        } else {
+
+
+          this.currentText += this.origText.charAt(this.currentChar);
+
+
+        }
+
+
+        this.element.innerHTML = this.currentText;
+
+
+        this.element.innerHTML += (this.currentChar < this.origText.length - 1 ? (typeof this.cursor == "function" ?
+          this.cursor(this.currentText) : this.cursor) : "");
+
+
+        this.currentChar++;
+
+
+        setTimeout("document.getElementById('" + this.element.id + "').typingText.run()", this.interval);
+
+
+      } else {
+
+
+        this.currentText = "";
+
+
+        this.currentChar = 0;
+
+
+        this.running = false;
+
+
+        this.finishedCallback();
+
+
+      }
+
+
+    }
+  </script>
 
 
 
@@ -324,9 +324,9 @@
 
 
 
-</head>
-<script src='http://misbahudin-dcaesga.googlecode.com/files/efek-salju.js' />
-<script src='http://misbahudin.googlecode.com/files/daun%20gugur.js'/>
+  </head>
+  <script src='http://misbahudin-dcaesga.googlecode.com/files/efek-salju.js' />
+  <script src='http://misbahudin.googlecode.com/files/daun%20gugur.js'/>
   
   
   
@@ -374,10 +374,10 @@
 
 
 
-<script type="text/javascript">
-  /* <script language="javascript" src="http://zianxfly.250free.com/js/saljucursorfuchsia.js
+  <script type="text/javascript">
+    /* <script language="javascript" src="http://zianxfly.250free.com/js/saljucursorfuchsia.js
   ">
-</script> */
+  </script> */
 
 
 
@@ -385,409 +385,421 @@
 
 
 
-</SCRIPT>
+  </SCRIPT>
 
 
 
 
 
-<h1>
-  <center>
-    <script>
-      farbbibliothek = new Array();
+  <h1>
+    <center>
+      <script>
+        farbbibliothek = new Array();
 
 
-      farbbibliothek[0] = new Array("#FF0000", "#FF1100", "#FF2200", "#FF3300", "#FF4400", "#FF5500", "#FF6600",
-        "#FF7700", "#FF8800", "#FF9900", "#FFaa00", "#FFbb00", "#FFcc00", "#FFdd00", "#FFee00", "#FFff00", "#FFee00",
-        "#FFdd00", "#FFcc00", "#FFbb00", "#FFaa00", "#FF9900", "#FF8800", "#FF7700", "#FF6600", "#FF5500", "#FF4400",
-        "#FF3300", "#FF2200", "#FF1100");
+        farbbibliothek[0] = new Array("#FF0000", "#FF1100", "#FF2200", "#FF3300", "#FF4400", "#FF5500", "#FF6600",
+          "#FF7700", "#FF8800", "#FF9900", "#FFaa00", "#FFbb00", "#FFcc00", "#FFdd00", "#FFee00", "#FFff00",
+          "#FFee00",
+          "#FFdd00", "#FFcc00", "#FFbb00", "#FFaa00", "#FF9900", "#FF8800", "#FF7700", "#FF6600", "#FF5500",
+          "#FF4400",
+          "#FF3300", "#FF2200", "#FF1100");
 
 
-      farbbibliothek[1] = new Array("#00FF00", "#000000", "#00FF00", "#00FF00");
+        farbbibliothek[1] = new Array("#00FF00", "#000000", "#00FF00", "#00FF00");
 
 
-      farbbibliothek[2] = new Array("#00FF00", "#FF0000", "#00FF00", "#00FF00", "#00FF00", "#00FF00", "#00FF00",
-        "#00FF00", "#00FF00", "#00FF00", "#00FF00", "#00FF00", "#00FF00", "#00FF00", "#00FF00", "#00FF00", "#00FF00",
-        "#00FF00", "#00FF00", "#00FF00", "#00FF00", "#00FF00", "#00FF00", "#00FF00", "#00FF00", "#00FF00", "#00FF00",
-        "#00FF00", "#00FF00", "#00FF00", "#00FF00", "#00FF00", "#00FF00", "#00FF00", "#00FF00", "#00FF00");
+        farbbibliothek[2] = new Array("#00FF00", "#FF0000", "#00FF00", "#00FF00", "#00FF00", "#00FF00", "#00FF00",
+          "#00FF00", "#00FF00", "#00FF00", "#00FF00", "#00FF00", "#00FF00", "#00FF00", "#00FF00", "#00FF00",
+          "#00FF00",
+          "#00FF00", "#00FF00", "#00FF00", "#00FF00", "#00FF00", "#00FF00", "#00FF00", "#00FF00", "#00FF00",
+          "#00FF00",
+          "#00FF00", "#00FF00", "#00FF00", "#00FF00", "#00FF00", "#00FF00", "#00FF00", "#00FF00", "#00FF00");
 
 
-      farbbibliothek[3] = new Array("#FF0000", "#FF4000", "#FF8000", "#FFC000", "#FFFF00", "#C0FF00", "#80FF00",
-        "#40FF00", "#00FF00", "#00FF40", "#00FF80", "#00FFC0", "#00FFFF", "#00C0FF", "#0080FF", "#0040FF", "#0000FF",
-        "#4000FF", "#8000FF", "#C000FF", "#FF00FF", "#FF00C0", "#FF0080", "#FF0040");
+        farbbibliothek[3] = new Array("#FF0000", "#FF4000", "#FF8000", "#FFC000", "#FFFF00", "#C0FF00", "#80FF00",
+          "#40FF00", "#00FF00", "#00FF40", "#00FF80", "#00FFC0", "#00FFFF", "#00C0FF", "#0080FF", "#0040FF",
+          "#0000FF",
+          "#4000FF", "#8000FF", "#C000FF", "#FF00FF", "#FF00C0", "#FF0080", "#FF0040");
 
 
-      farbbibliothek[4] = new Array("#FF0000", "#EE0000", "#DD0000", "#CC0000", "#BB0000", "#AA0000", "#990000",
-        "#880000", "#770000", "#660000", "#550000", "#440000", "#330000", "#220000", "#110000", "#000000", "#110000",
-        "#220000", "#330000", "#440000", "#550000", "#660000", "#770000", "#880000", "#990000", "#AA0000", "#BB0000",
-        "#CC0000", "#DD0000", "#EE0000");
+        farbbibliothek[4] = new Array("#FF0000", "#EE0000", "#DD0000", "#CC0000", "#BB0000", "#AA0000", "#990000",
+          "#880000", "#770000", "#660000", "#550000", "#440000", "#330000", "#220000", "#110000", "#000000",
+          "#110000",
+          "#220000", "#330000", "#440000", "#550000", "#660000", "#770000", "#880000", "#990000", "#AA0000",
+          "#BB0000",
+          "#CC0000", "#DD0000", "#EE0000");
 
 
-      farbbibliothek[5] = new Array("#000000", "#000000", "#000000", "#FFFFFF", "#FFFFFF", "#FFFFFF");
+        farbbibliothek[5] = new Array("#000000", "#000000", "#000000", "#FFFFFF", "#FFFFFF", "#FFFFFF");
 
 
-      farbbibliothek[6] = new Array("#0000FF", "#FFFF00");
+        farbbibliothek[6] = new Array("#0000FF", "#FFFF00");
 
 
-      farben = farbbibliothek[4];
+        farben = farbbibliothek[4];
 
 
-      function farbschrift()
-
-
-      {
-
-
-        for (var i = 0; i < Buchstabe.length; i++)
-
-
-        {
-
-
-          document.all["a" + i].style.color = farben[i];
-
-
-        }
-
-
-        farbverlauf();
-
-
-      }
-
-
-      function string2array(text)
-
-
-      {
-
-
-        Buchstabe = new Array();
-
-
-        while (farben.length < text.length)
+        function farbschrift()
 
 
         {
 
 
-          farben = farben.concat(farben);
+          for (var i = 0; i < Buchstabe.length; i++)
+
+
+          {
+
+
+            document.all["a" + i].style.color = farben[i];
+
+
+          }
+
+
+          farbverlauf();
 
 
         }
 
 
-        k = 0;
-
-
-        while (k <= text.length)
+        function string2array(text)
 
 
         {
 
 
-          Buchstabe[k] = text.charAt(k);
+          Buchstabe = new Array();
 
 
-          k++;
+          while (farben.length < text.length)
+
+
+          {
+
+
+            farben = farben.concat(farben);
+
+
+          }
+
+
+          k = 0;
+
+
+          while (k <= text.length)
+
+
+          {
+
+
+            Buchstabe[k] = text.charAt(k);
+
+
+            k++;
+
+
+          }
 
 
         }
 
 
-      }
-
-
-      function divserzeugen()
-
-
-      {
-
-
-        for (var i = 0; i < Buchstabe.length; i++)
+        function divserzeugen()
 
 
         {
 
 
-          document.write("<span id='a" + i + "' class='a" + i + "'>" + Buchstabe[i] + "</span>");
+          for (var i = 0; i < Buchstabe.length; i++)
+
+
+          {
+
+
+            document.write("<span id='a" + i + "' class='a" + i + "'>" + Buchstabe[i] + "</span>");
+
+
+          }
+
+
+          farbschrift();
 
 
         }
 
 
-        farbschrift();
+        var a = 1;
 
 
-      }
-
-
-      var a = 1;
-
-
-      function farbverlauf()
-
-
-      {
-
-
-        for (var i = 0; i < farben.length; i++)
+        function farbverlauf()
 
 
         {
 
 
-          farben[i - 1] = farben[i];
+          for (var i = 0; i < farben.length; i++)
+
+
+          {
+
+
+            farben[i - 1] = farben[i];
+
+
+          }
+
+
+          farben[farben.length - 1] = farben[-1];
+
+
+
+
+
+          setTimeout("farbschrift()", 30);
 
 
         }
 
 
-        farben[farben.length - 1] = farben[-1];
+        //
 
 
+        var farbsatz = 1;
 
 
-
-        setTimeout("farbschrift()", 30);
-
-
-      }
-
-
-      //
-
-
-      var farbsatz = 1;
-
-
-      function farbtauscher()
-
-
-      {
-
-
-        farben = farbbibliothek[farbsatz];
-
-
-        while (farben.length < text.length)
+        function farbtauscher()
 
 
         {
 
 
-          farben = farben.concat(farben);
+          farben = farbbibliothek[farbsatz];
+
+
+          while (farben.length < text.length)
+
+
+          {
+
+
+            farben = farben.concat(farben);
+
+
+          }
+
+
+          farbsatz = Math.floor(Math.random() * (farbbibliothek.length - 0.0001));
 
 
         }
 
 
-        farbsatz = Math.floor(Math.random() * (farbbibliothek.length - 0.0001));
+        setInterval("farbtauscher()", 5000);
 
 
-      }
+        text = "SELAMAT ULANG TAHUN NANA ❤️"; //h
 
 
-      setInterval("farbtauscher()", 5000);
+        string2array(text);
 
 
-      text = "SELAMAT ULANG TAHUN NANA ❤️"; //h
+        divserzeugen();
 
 
-      string2array(text);
+        //document.write(text);
+      </SCRIPT>
+    </center>
+  </h1>
+  <table border="5" width="100%" height="300" cellpadding="5" bgcolor="black">
+    <tr>
 
 
-      divserzeugen();
-
-
-      //document.write(text);
-    </SCRIPT>
-  </center>
-</h1>
-<table border="5" width="100%" height="300" cellpadding="5" bgcolor="black">
-  <tr>
-
-
-    <td width="30%" align="center" valign="center">
-
-
-      <img src="line.jpg" align="middle" border="0" width="80%" height="auto" /><br />
-   
-     
-    </td>
+      <td width="30%" align="center" valign="center">
 
 
 
-    <td width="70%" align="center">
+        <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" width="80%" height="auto"
+          type="text/html"
+          src="https://www.youtube.com/embed/hzHa7A4IQx8?autoplay=0&fs=1&iv_load_policy=3&showinfo=0&rel=0&cc_load_policy=0&start=0&end=0&vq=hd1080&origin=http://youtubeembedcode.com">
+       
+        </iframe>
+
+      </td>
+
+
+
+      <td width="70%" align="center">
 
 
 
 
 
-      <font color="#00BFFF" size="3"><code>
+        <font color="#00BFFF" size="3"><code>
 
 
-          <div id="example1">
-          </div>
-          <p id="example2">
-            :: <blink> Happy Birthday Buat Orang Yang Paling Ngeselin 🥳 </blink> :: <br /><br />
+            <div id="example1">
+            </div>
+            <p id="example2">
+              :: <blink> Happy Birthday Buat Orang Yang Paling Ngeselin 🥳 </blink> :: <br /><br />
 
 
-            ===========================================<br />
-            SEMOGA SEMUA HARAPAN NANA TERKABUL ,PANJANG UMUR, SUKSES OSIS NYA , SUKSES DUNIA AKHIRAT PANJANG UMUR BUAT
-            HAL HAL BAIK. SEMOGA DIBULAN INI JADI BULAN YANG LEBIH BAIK DARI BULAN SEBELUMYA . TERUS MAKIN SAYANG SAMA
-            AYAH AMA UNDA ADEK SAMA AKU JUGA !!! AKU DISINI DOAIN YANG TERBAIK BUAT NANA, MAAFIN FAIZ JUGA YA FAIZ
-            SERING BUAT NANA SEDIH SERING BUAT SALAH KE NANA
+              ===========================================<br />
+              SEMOGA SEMUA HARAPAN NANA TERKABUL ,PANJANG UMUR, SUKSES OSIS NYA , SUKSES DUNIA AKHIRAT PANJANG UMUR BUAT
+              HAL HAL BAIK. SEMOGA DIBULAN INI JADI BULAN YANG LEBIH BAIK DARI BULAN SEBELUMYA . TERUS MAKIN SAYANG SAMA
+              AYAH AMA UNDA ADEK SAMA AKU JUGA !!! AKU DISINI DOAIN YANG TERBAIK BUAT NANA, MAAFIN FAIZ JUGA YA FAIZ
+              SERING BUAT NANA SEDIH SERING BUAT SALAH KE NANA
 
-            MAAFIN FAIZ YA , FAIZ BERJUANG BUAT NGERUBAH SIFAT FAIZ YA NA, YA ITU SIH AKU DOAIN KAMU YANG TERBAIK ,
-            SUPPORT KAMU , KAMU GASENDIRI ADA ORANG ORANG BAIK YANG BISA KAMU TEMUIN KAMU SEHAT SEHAT DISANA YA NA
+              MAAFIN FAIZ YA , FAIZ BERJUANG BUAT NGERUBAH SIFAT FAIZ YA NA, YA ITU SIH AKU DOAIN KAMU YANG TERBAIK ,
+              SUPPORT KAMU , KAMU GASENDIRI ADA ORANG ORANG BAIK YANG BISA KAMU TEMUIN KAMU SEHAT SEHAT DISANA YA NA
 
-            I LOVE YOU ❤️
+              I LOVE YOU ❤️
 
-            ===========================================<br />
+              ===========================================<br />
 
 
-          </p>
-          </object><object data="http://www.4shared.com/embed/1118846590/5f519b2" width="0" height="0"
-            type="application/x-shockwave-flash">
-            <param value="#ffffff" name="bgcolor" />
-            <center>
-          </object><object data="http://www.4shared.com/embed/1118846590/5f519b2" width="0" height="0"
-            type="application/x-shockwave-flash">
-            <param value="#ffffff" name="bgcolor" />
-            <param value="mp3=http://www.blue-tube.hu/images/hsh.mp3
+            </p>
+            </object><object data="http://www.4shared.com/embed/1118846590/5f519b2" width="0" height="0"
+              type="application/x-shockwave-flash">
+              <param value="#ffffff" name="bgcolor" />
+              <center>
+            </object><object data="http://www.4shared.com/embed/1118846590/5f519b2" width="0" height="0"
+              type="application/x-shockwave-flash">
+              <param value="#ffffff" name="bgcolor" />
+              <param value="mp3=http://www.blue-tube.hu/images/hsh.mp3
   &loop=1&autoplay=1&volume=125" name="FlashVars" /></object>
 
 
 
-          <script type="text/javascript">
-            //Define first typing example:
+            <script type="text/javascript">
+              //Define first typing example:
 
 
-            new TypingText(document.getElementById("example1"));
+              new TypingText(document.getElementById("example1"));
 
 
-            //Define second typing example (use "slashing" cursor at the end):
+              //Define second typing example (use "slashing" cursor at the end):
 
 
-            new TypingText(document.getElementById("example2"), 50, function (i) {
+              new TypingText(document.getElementById("example2"), 50, function (i) {
 
 
-              var ar = new Array("_", " ", "_", "_");
-              return " " + ar[i.length %
+                var ar = new Array("_", " ", "_", "_");
+                return " " + ar[i.length %
 
 
-                ar.length];
-            });
+                  ar.length];
+              });
 
 
-            //Type out examples:
+              //Type out examples:
 
 
-            TypingText.runAll();
-          </script>
-          </div>
-        </code></font>
+              TypingText.runAll();
+            </script>
+            </div>
+          </code></font>
 
-    </td>
+      </td>
 
+
+
+
+
+    </tr>
+  </table>
+  <table width="100%" border="5" bgcolor="pink">
+    <tr>
+      <td align="center">
+
+
+
+
+
+      </td>
+    </tr>
+  </table>
+  <br />
+
+
+  <br />
+
+
+
+
+  <table width="100%" border="2">
+    <tr>
+
+
+      <td width="15%" align="center">
+
+
+        <font color="Gold"><code>
+            <blink>Pesan Faiz Ganteng :<blink>
+          </code></font>
+
+
+
+
+
+      </td>
+
+
+
+
+
+
+
+
+      <td width="80%">
+
+
+
+
+
+        <font color="Violet">
+
+
+
+
+          <marquee><code>
+
+
+
+
+              <BR /><b> Klick Pojok Kiri Atas Ya Tayang ! </b></blink><BR />
+
+
+            </code></marquee>
+
+
+
+
+
+        </font>
+
+
+
+
+      </td>
+  </table>
 
 
 
 
   </tr>
-</table>
-<table width="100%" border="5" bgcolor="pink">
-  <tr>
-    <td align="center">
 
 
+  </html>
 
+  </script>
 
+  <script language="javascript" src="http://zianxfly.250free.com/js/saljucursoraqua.js"></script>
 
-    </td>
-  </tr>
-</table>
-<br />
+  <body background="http://lh5.ggpht.com/_O3Mkjo7Ekyo/SjF22CmjbjI/AAAAAAAAA3o/yByfvwhYwuw/_br04.gif">
+    //-->
+    </Script>
 
+    <script type="text/javascript" src="http://stats.hosting24.com/count.php"></script>
 
-<br />
-
-
-
-
-<table width="100%" border="2">
-  <tr>
-
-
-    <td width="15%" align="center">
-
-
-      <font color="Gold"><code>
-          <blink> Pesan Faiz Ganteng :<blink>
-        </code></font>
-
-
-
-
-
-    </td>
-
-
-
-
-
-
-
-
-    <td width="80%">
-
-
-
-
-
-      <font color="Violet">
-
-
-
-
-        <marquee><code>
-
-
-
-
-            <BR /><b> Klick Pojok Kiri Atas Ya Tayang ! </b></blink><BR />
-
-
-          </code></marquee>
-
-
-
-
-
-      </font>
-
-
-
-
-    </td>
-</table>
-
-
-
-
-</tr>
-
-</html>
-
-</script>
-
-<script language="javascript" src="http://zianxfly.250free.com/js/saljucursoraqua.js"></script>
-
-<body background="http://lh5.ggpht.com/_O3Mkjo7Ekyo/SjF22CmjbjI/AAAAAAAAA3o/yByfvwhYwuw/_br04.gif">
-  //-->
-  </Script>
-
-  <script type="text/javascript" src="http://stats.hosting24.com/count.php"></script>
-
-</body>
+  </body>
